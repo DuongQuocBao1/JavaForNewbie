@@ -13,28 +13,29 @@ package tutorials.example;
 //}
 
 public class Candidate {
-	String ma;
+	int ma;
 	String ten;
-	String diemToan;
-	String diemVan;
-	String diemAnh;
+	int diemToan;
+	int diemVan;
+	int diemAnh;
 	public static void main(String[] args) {
 		
 	}
+	
 	public Candidate() {
 	}
-	public Candidate(String ma, String ten, String diemToan, String diemVan, String diemAnh) {
-		super();
+	
+	public Candidate(int ma, String ten, int diemToan, int diemVan, int diemAnh) {
 		this.ma = ma;
 		this.ten = ten;
 		this.diemToan = diemToan;
 		this.diemVan = diemVan;
 		this.diemAnh = diemAnh;
 	}
-	public String getMa() {
+	public int getMa() {
 		return ma;
 	}
-	public void setMa(String ma) {
+	public void setMa(int ma) {
 		this.ma = ma;
 	}
 	public String getTen() {
@@ -43,22 +44,22 @@ public class Candidate {
 	public void setTen(String ten) {
 		this.ten = ten;
 	}
-	public String getDiemToan() {
+	public int getDiemToan() {
 		return diemToan;
 	}
-	public void setDiemToan(String diemToan) {
+	public void setDiemToan(int diemToan) {
 		this.diemToan = diemToan;
 	}
-	public String getDiemVan() {
+	public int getDiemVan() {
 		return diemVan;
 	}
-	public void setDiemVan(String diemVan) {
+	public void setDiemVan(int diemVan) {
 		this.diemVan = diemVan;
 	}
-	public String getDiemAnh() {
+	public int getDiemAnh() {
 		return diemAnh;
 	}
-	public void setDiemAnh(String diemAnh) {
+	public void setDiemAnh(int diemAnh) {
 		this.diemAnh = diemAnh;
 	}
 	
