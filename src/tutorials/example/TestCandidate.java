@@ -35,47 +35,13 @@ public class TestCandidate {
 
 			int diemToan = 0;
 			System.out.println("Điểm toán: ");
-			while (true) {
-				try {
-					diemToan = Integer.parseInt(scanner.nextLine());
-					if (diemToan < 1 || diemToan > 10) {
-						System.out.println("Vui lòng nhập số từ 1 đến 10: ");
-						continue;
-					}
-					break;
-				} catch (Exception e) {
-					System.out.println("Vui lòng chỉ nhập số 1-10, mời bạn nhập lại: ");
-				}
-			}
+			Candidate.verifyDiem(diemToan);
 			int diemVan = 0;
 			System.out.println("Điểm văn: ");
-			while (true) {
-				try {
-					diemVan = Integer.parseInt(scanner.nextLine());
-					if (diemVan < 1 || diemVan > 10) {
-						System.out.println("Vui lòng nhập số từ 1 đến 10: ");
-						continue;
-					}
-					break;
-				} catch (Exception e) {
-					System.out.println("Vui lòng chỉ nhập số 1-10, mời bạn nhập lại: ");
-				}
-			}
-
+			Candidate.verifyDiem(diemVan);
 			int diemAnh = 0;
 			System.out.println("Điểm anh: ");
-			while (true) {
-				try {
-					diemAnh = Integer.parseInt(scanner.nextLine());
-					if (diemAnh < 1 || diemAnh > 10) {
-						System.out.println("Vui lòng nhập số từ 1 đến 10: ");
-						continue;
-					}
-					break;
-				} catch (Exception e) {
-					System.out.println("Vui lòng chỉ nhập số 1-10, mời bạn nhập lại: ");
-				}
-			}
+			Candidate.verifyDiem(diemAnh);
 
 			mangCand[i] = new Candidate(ma, ten, diemToan, diemVan, diemAnh);
 			// xoá bộ nhớ đệm
@@ -87,13 +53,15 @@ public class TestCandidate {
 			System.out.println("Tổng điểm của " + ca.ten + ": " + (ca.diemToan + ca.diemVan + ca.diemAnh));
 
 		}
-		System.out.println("Đây là các thí sinh có số điểm lớn hơn 15: ");
-		// To do something ...
 		for (Candidate ca : mangCand) {
-			if (ca.diemToan + ca.diemVan + ca.diemAnh > 15) {
+			if (ca.diemToan + ca.diemVan + ca.diemAnh >= 15) {
+				System.out.println("Đây là các thí sinh có số điểm lớn hơn hoặc bằng 15: ");
 				System.out.println("Mã: " + ca.ma + " và Tên: " + ca.ten);
-			} else {
-				System.out.println("Không có");
+			}
+		}
+		for (Candidate ca : mangCand) {
+			if (ca.diemToan + ca.diemVan + ca.diemAnh < 15) {
+				System.out.println("Không có thí sinh nào có điểm >= 15");
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 package tutorials.example;
 
+import java.util.Scanner;
+
 //Xây dựng lớp Candidate (Thí sinh) gồm các thuộc tính: mã, tên, ngày tháng năm sinh, điểm thi Toán, Văn, Anh và các phương thức cần thiết.
 //Xây dựng lớp TestCandidate để kiểm tra lớp trên:
 //tức là người dùng nhập vào 5
@@ -61,6 +63,22 @@ public class Candidate {
 	}
 	public void setDiemAnh(int diemAnh) {
 		this.diemAnh = diemAnh;
+	}
+
+	public static void verifyDiem(Integer obj) {
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			try {
+				obj = Integer.parseInt(scanner.nextLine());
+				if (obj < 1 || obj > 10) {
+					System.out.println("Vui lòng nhập số từ 1 đến 10: ");
+					continue;
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Vui lòng chỉ nhập số 1-10, mời bạn nhập lại: ");
+			}
+		}
 	}
 	
 }
