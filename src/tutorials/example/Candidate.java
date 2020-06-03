@@ -17,9 +17,9 @@ import java.util.Scanner;
 public class Candidate {
 	int ma;
 	String ten;
-	int diemToan;
-	int diemVan;
-	int diemAnh;
+	float diemToan;
+	float diemVan;
+	float diemAnh;
 	public static void main(String[] args) {
 		
 	}
@@ -27,7 +27,7 @@ public class Candidate {
 	public Candidate() {
 	}
 	
-	public Candidate(int ma, String ten, int diemToan, int diemVan, int diemAnh) {
+	public Candidate(int ma, String ten, float diemToan, float diemVan, float diemAnh) {
 		this.ma = ma;
 		this.ten = ten;
 		this.diemToan = diemToan;
@@ -46,31 +46,32 @@ public class Candidate {
 	public void setTen(String ten) {
 		this.ten = ten;
 	}
-	public int getDiemToan() {
+	public float getDiemToan() {
 		return diemToan;
 	}
-	public void setDiemToan(int diemToan) {
+	public void setDiemToan(float diemToan) {
 		this.diemToan = diemToan;
 	}
-	public int getDiemVan() {
+	public float getDiemVan() {
 		return diemVan;
 	}
-	public void setDiemVan(int diemVan) {
+	public void setDiemVan(float diemVan) {
 		this.diemVan = diemVan;
 	}
-	public int getDiemAnh() {
+	public float getDiemAnh() {
 		return diemAnh;
 	}
-	public void setDiemAnh(int diemAnh) {
+	public void setDiemAnh(float diemAnh) {
 		this.diemAnh = diemAnh;
 	}
 
-	public static void verifyDiem(Integer obj) {
+	public static float nhapDiem() {
+		float diem;
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			try {
-				obj = Integer.parseInt(scanner.nextLine());
-				if (obj < 1 || obj > 10) {
+			diem =Float.parseFloat(scanner.nextLine());
+				if (diem < 1 || diem > 10) {
 					System.out.println("Vui lòng nhập số từ 1 đến 10: ");
 					continue;
 				}
@@ -79,6 +80,7 @@ public class Candidate {
 				System.out.println("Vui lòng chỉ nhập số 1-10, mời bạn nhập lại: ");
 			}
 		}
+		return diem;
 	}
 	
 }
